@@ -17,14 +17,24 @@
 defined('MOODLE_INTERNAL') || die();
 require_once($CFG->libdir . '/filelib.php');
 
+echo "
+<style>
+.h_infra_rsc_tool_icon:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+</style>
+";
+
 class block_h_infra_rsc extends block_base {
     function init() {
-        $this->title = "H2020";//get_string('pluginname', 'block_h_infra_rsc');
+        global $USER, $CFG;
     }
 
     function get_content() {
         global $USER, $CFG;
-
+        $this->title = "H2020".'<a href="'.$CFG->wwwroot.'/blocks/h_infra_rsc/admin_interface.php?id_context='.$this->context->id.'"><i class="h_infra_rsc_tool_icon icon fa fa-wrench" style="left:5px;position:relative;"></i></a>';//get_string('pluginname', 'block_h_infra_rsc');
+        
         $rows = array();
         $srows = array();
         $prows = array();
@@ -36,7 +46,7 @@ class block_h_infra_rsc extends block_base {
         $this->content->text = '';
         $this->content->footer = '';
 
-        $this->content->text .= "<a href='".$CFG->wwwroot.'/blocks/h_infra_rsc/table_display_interface.php'."'>Access the Sharing infrastructures and resources</a>";
+        $this->content->text .= "<a href='".$CFG->wwwroot.'/blocks/h_infra_rsc/table_display_interface.php?id_context='.$this->context->id."'>Access the Sharing infrastructures and resources</a>";
  
         return $this->content;
     }
