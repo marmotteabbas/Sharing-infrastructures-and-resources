@@ -16,31 +16,19 @@
 
 
 require_once(__DIR__.'/../../config.php');
-//require_once("{$CFG->libdir}/completionlib.php");
-// Load data.
-/* $id = required_param('course', PARAM_INT);
-$userid = optional_param('user', 0, PARAM_INT);
-*/
 
 echo "<link href='style/style.css' rel='stylesheet' type='text/css' />";
 
-//$PAGE->set_context(context_course::instance($course->id));
-
-// Print header.
-//$page = get_string('completionprogressdetails', 'block_completionstatus');
 $title = "Sharing infrastructures and resources";
 
-//$cfg->wwwroot;
-//$PAGE->navbar->add($page);
 $PAGE->set_pagelayout('report');
 $PAGE->set_url('/blocks/h_infra_rsc/table_display_interface.php', array());
-//$PAGE->set_title("Sharing infrastructures and resources");
+
 $PAGE->set_heading($title);
 
 echo $OUTPUT->header();
 
     echo html_writer::start_span('zombie') . '<h1>H2020</h1>' . html_writer::end_span();
-
     echo html_writer::start_tag('table', array('class' => 'all_datas_infra_rsc', "style" => "margin-right:10px;width:100%;"));
 
         echo html_writer::start_tag('thead');
@@ -63,7 +51,7 @@ echo $OUTPUT->header();
         echo html_writer::start_tag('tbody');
             echo html_writer::start_tag('tr');
                 echo html_writer::start_tag('td'/*, array('colspan' => '2')*/);
-                    echo "data 1";
+                    echo get_file_infra_url(); //  echo "data 1";
                 echo html_writer::end_tag('td');
                 echo html_writer::start_tag('td');
                     echo "data 2";
@@ -80,3 +68,18 @@ echo $OUTPUT->header();
     echo html_writer::end_tag('table');
 
 echo $OUTPUT->footer();
+
+
+// Here because I can't requiere_once, I don't know why yet ...
+function get_file_infra_url() {
+
+    $fs = get_file_storage();
+    $files = $fs->get_area_files($_GET['id_context'], 'block_h_infra_rsc', 'content', 0, 'sortorder', false);
+
+    $file = reset($files);
+
+    $path = '/'.$_GET['id_context'].'/block_h_infra_rsc/content/'.'0'./*$resource->revision.*/$file->get_filepath().$file->get_filename();
+    $fullurl = moodle_url::make_file_url('/pluginfile.php', $path, $displaytype == RESOURCELIB_DISPLAY_DOWNLOAD);
+
+    return $fullurl;
+}

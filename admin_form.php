@@ -35,6 +35,60 @@ class admin_form_h_infra_form extends moodleform {
 
         $mform->addElement('filemanager', 'files', get_string('selectfiles'), null, $filemanager_options);
 
+        $select = $mform->addElement('select', 'application_theme', 
+        "Application theme(s)", 
+        array('Energy' => 'Energy', 
+        'Environment' => 'Environment', 
+        'Health Engineering' => 'Health Engineering', 
+        "Industry 4.0" => "Industry 4.0", 
+        "IT, Electronics & Telecom" => "IT, Electronics & Telecom"), 
+    /*$attributes*/ null);
+        $select->setMultiple(false);
+
+        $select = $mform->addElement('select', 'keywords', 
+        "Keywords", 
+        array('Characterisation' => 'Characterisation', 
+        'Sustainable Technologies' => 'Sustainable Technologies', 
+        'Materials' => 'Materials', 
+        "Animal Experimentation" => "Animal Experimentation", 
+        "Optical" => "Optical",
+        "Biological" => "Biological",
+        "Health, Miscellaneous" => "Health, Miscellaneous",
+        "Production 4.0" => "Production 4.0",
+        "Energy Efficiency" => "Energy Efficiency",
+        "Technological Applications for health" => "Technological Applications for health",
+        "Robotics" => "Robotics",
+        "Living Lab" => "Living Lab",
+        "Design" => "Design",
+        "Space" => "Space",
+        "Renewable Energy" => "Renewable Energy",
+        "Electromagnetic/Magnetic" => "Electromagnetic/Magnetic",
+        "Artificial Intelligence" => "Artificial Intelligence",
+        "Smart grids" => "Smart grids",
+        "Electronics" => "Electronics",
+        "Data processing" => "Data processing",
+        "Electrical" => "Electrical",
+        "Mechanical Engineering" => "Mechanical Engineering",
+        "High Performance Computing" => "High Performance Computing",
+        "Observation and/or modelling of nature" => "Observation and/or modelling of nature",
+        "Micro-/-nano-" => "Micro-/-nano-",
+        "Telecommunications" => "Telecommunications"), 
+    /*$attributes*/ null);
+        $select->setMultiple(true);
+
+        $select = $mform->addElement('select', 'homepartnerinstitution', 
+        "Home Partner Institution", 
+        array(
+        'Aalto University' => 'Aalto University', 
+        'Grenoble INP – UGA' => 'Grenoble INP – UGA', 
+        'KTH' => 'KTH', 
+        "PoliTO" => "PoliTO", 
+        "TUDa" => "TUDa", 
+        "ULisboa" => "ULisboa",
+        "UPC" => "UPC"), 
+    /*$attributes*/ null);
+        $select->setMultiple(false);
+
         $this->add_action_buttons(true, "Sauvez moi ça");
     }
 
