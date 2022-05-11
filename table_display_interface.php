@@ -72,6 +72,10 @@ echo "
     position: relative;
     text-align: center;
 }
+
+.cellule_keyword {
+    font-size: 0.8em;
+}
 </style>
 ";
 echo $OUTPUT->header();
@@ -116,109 +120,109 @@ echo $OUTPUT->header();
     echo html_writer::start_div('thead_keyword_filter')."Keywords Filter". html_writer::end_div();
         echo html_writer::start_tag('table', array("id" => "table_keyword"));
             echo html_writer::start_tag('tr');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Characterisation";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Sustainable Technologies";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Multimedia";
                 echo html_writer::end_tag('td');
             echo html_writer::end_tag('tr');
 
             echo html_writer::start_tag('tr');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Materials";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Animal Experimentation";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Optical";
                 echo html_writer::end_tag('td');
             echo html_writer::end_tag('tr');
 
             echo html_writer::start_tag('tr');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Biological";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Helth, miscellaneous";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Production 4.0";
                 echo html_writer::end_tag('td');
             echo html_writer::end_tag('tr');
 
             echo html_writer::start_tag('tr');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Energy Efficiency";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Technological applications for Health";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Robotics";
                 echo html_writer::end_tag('td');
             echo html_writer::end_tag('tr');
 
             echo html_writer::start_tag('tr');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Living Lab";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Design";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Space";
                 echo html_writer::end_tag('td');
             echo html_writer::end_tag('tr');
 
             echo html_writer::start_tag('tr');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Renewable Energy";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Electromagnetic/Magnetic";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Artifical Intelligence";
                 echo html_writer::end_tag('td');
             echo html_writer::end_tag('tr');
 
             echo html_writer::start_tag('tr');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Smart Grids";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Electronics";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Data processing";
                 echo html_writer::end_tag('td');
             echo html_writer::end_tag('tr');
 
             echo html_writer::start_tag('tr');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Electrical";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Mechanical Engineering";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "High Performance Computing";
                 echo html_writer::end_tag('td');
             echo html_writer::end_tag('tr');
 
             echo html_writer::start_tag('tr');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Observation and/or Modelling of Nature";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Micro-/-nano-";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td', array("class" => "cellule_research"));
+                echo html_writer::start_tag('td', array("class" => "cellule_keyword cellule_research"));
                     echo "Telecommunications";
                 echo html_writer::end_tag('td');
             echo html_writer::end_tag('tr');
