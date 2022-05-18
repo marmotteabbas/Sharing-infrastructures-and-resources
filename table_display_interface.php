@@ -84,6 +84,7 @@ echo "
 
 .cellule_keyword {
     font-size: 0.8em;
+    cursor: pointer;
 }
 </style>
 ";
