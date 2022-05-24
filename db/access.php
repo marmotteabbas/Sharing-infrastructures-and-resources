@@ -21,8 +21,6 @@ defined('MOODLE_INTERNAL') || die();
 $capabilities = array(
 
     'block/h_infra_rsc:addinstance' => array(
-        'riskbitmask' => RISK_SPAM | RISK_XSS,
-
         'captype' => 'write',
         'contextlevel' => CONTEXT_BLOCK,
         'archetypes' => array(
@@ -31,7 +29,7 @@ $capabilities = array(
         ),
 
         'clonepermissionsfrom' => 'moodle/site:manageblocks'
-    ),
+    )/*,
 
     'block/h_infra_rsc:view' => array(
         'captype' => 'read',
@@ -40,5 +38,5 @@ $capabilities = array(
             'guest' => CAP_ALLOW,
             'user' => CAP_ALLOW,
         )
-    ),
+    ),*/
 );

@@ -36,6 +36,7 @@ echo "
     border-radius: 3px;
     text-align: center;
     font-size : 0.9em;
+    cursor: pointer;
 }
 
 #table_filter_research_app_theme_filter {
@@ -84,7 +85,6 @@ echo "
 
 .cellule_keyword {
     font-size: 0.8em;
-    cursor: pointer;
 }
 </style>
 ";

@@ -32,8 +32,21 @@ class block_h_infra_rsc extends block_base {
     }
 
     function get_content() {
-        global $USER, $CFG;
-        $this->title = "H2020".'<a href="'.$CFG->wwwroot.'/blocks/h_infra_rsc/admin_interface.php?id_context='.$this->context->id.'"><i class="h_infra_rsc_tool_icon icon fa fa-wrench" style="left:5px;position:relative;"></i></a>';//get_string('pluginname', 'block_h_infra_rsc');
+        global $USER, $CFG, $COURSE, $DB;
+
+        $instance = $DB->get_record('block_instances', array('id' => $this->instance->id));
+        $categorycontext = context::instance_by_id($instance->parentcontextid);
+        $addpermission = has_capability('moodle/question:add', $categorycontext);
+
+        if ($addpermission == false) {
+            $this->title = "H2020";
+        } else {
+            $this->title = "H2020"
+            .'<a href="'.$CFG->wwwroot.'/blocks/h_infra_rsc/admin_interface.php?instance_id='.$this->instance->id.'&id_context='.$this->context->id.'"><i class="h_infra_rsc_tool_icon icon fa fa-wrench" style="left:5px;position:relative;"></i></a>';
+        }
+        
+
+        
         
         $rows = array();
         $srows = array();
