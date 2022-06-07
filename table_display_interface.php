@@ -26,6 +26,12 @@ $PAGE->set_url('/blocks/h_infra_rsc/table_display_interface.php', array());
 
 $PAGE->requires->js_call_amd('block_h_infra_rsc/table_manager', 'init', array());
 
+
+$instance = $DB->get_record('block_instances', array('id' => $_GET['instance_id']));
+$categorycontext = context::instance_by_id($instance->parentcontextid);
+$addpermission = has_capability('moodle/question:add', $categorycontext);
+
+
 $PAGE->set_heading($title);
 
 echo "
@@ -317,6 +323,13 @@ echo $OUTPUT->header();
                 echo html_writer::start_tag('td');
                     echo  $rec->homepartnerinstitution;
                 echo html_writer::end_tag('td');
+
+                if ($addpermission) {
+                    echo html_writer::start_tag('td');
+                        echo '<span class="remove_rec" rec_id="'.$rec->id.'"><i class="icon fa fa-trash fa-fw " title="Supprimer" aria-label="Supprimer"></i></span>';
+                    echo html_writer::end_tag('td');
+                }
+                
             echo html_writer::end_tag('tr');
         }
 

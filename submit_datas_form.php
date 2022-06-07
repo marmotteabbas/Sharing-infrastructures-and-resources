@@ -71,4 +71,7 @@ function get_file_infra_url($last_id) {
     return $CFG->wwwroot."/pluginfile.php".$path;
 }
 
+  header('Location: '.$CFG->wwwroot.'/blocks/h_infra_rsc/admin_interface.php?instance_id='.$_POST['instance_id'].'&id_context='.$_POST['id_context'].'&rec=1');
+  exit();
+
 ?>

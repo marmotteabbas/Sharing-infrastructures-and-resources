@@ -59,7 +59,7 @@ class block_h_infra_rsc extends block_base {
         $this->content->text = '';
         $this->content->footer = '';
 
-        $this->content->text .= "<a href='".$CFG->wwwroot.'/blocks/h_infra_rsc/table_display_interface.php?id_context='.$this->context->id."'>Access the Sharing infrastructures and resources</a>";
+        $this->content->text .= "<a href='".$CFG->wwwroot.'/blocks/h_infra_rsc/table_display_interface.php?id_context='.$this->context->id.'&instance_id='.$this->instance->id."'>Access the Sharing infrastructures and resources</a>";
  
         return $this->content;
     }

@@ -202,7 +202,7 @@ define(['jquery'], function($) {
                 $.ajax({
                     method: "POST",
                     url: "ajax_call.php",
-                    data: {/* box: box,*/ datas: datas }
+                    data: {mode: "add", datas: datas }
                 })
                 .done(function( msg ) {
                     $("#table_data").empty();
@@ -228,6 +228,22 @@ define(['jquery'], function($) {
                  // alert( "Data Saved: " + msg );
                 });
             });
+
+            $(".remove_rec").click(function() {
+                var rec_id = $(this).attr("rec_id");
+                $.ajax({
+                    method: "POST",
+                    url: "ajax_call.php",
+                    data: { mode: "remove", rec_id: rec_id }
+                })
+                .done(function( msg ) {
+                    console.log("ok removed "+msg);
+                });
+            });
+
+        },
+        progressive_disappear: function() {
+            $("#message_confirmation").fadeOut(1500, function() { $("#message_confirmation").remove(); });
         }
     };
 });

@@ -92,8 +92,9 @@ class admin_form_h_infra_form extends moodleform {
         $this->add_action_buttons(true, "Sauvez moi ça");
     }
 
-    function set_id_context_field($i){
+    function set_id_context_field($i, $y){
         $this->_form->addElement('hidden', 'id_context', $i);
+        $this->_form->addElement('hidden', 'instance_id', $y);
     }
 }
 
