@@ -2,7 +2,7 @@
     require_once(__DIR__.'/../../config.php');
     global $DB;
 
-    if($_POST['mode'] == "add") {
+    if($_POST['mode'] == "select") {
         $where = "WHERE "; 
         foreach ($_POST['datas'] as $k => $sub_tab) {
             $i=0;

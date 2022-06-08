@@ -24,13 +24,11 @@ $title = "Sharing infrastructures and resources";
 $PAGE->set_pagelayout('report');
 $PAGE->set_url('/blocks/h_infra_rsc/table_display_interface.php', array());
 
-$PAGE->requires->js_call_amd('block_h_infra_rsc/table_manager', 'init', array());
-
-
 $instance = $DB->get_record('block_instances', array('id' => $_GET['instance_id']));
 $categorycontext = context::instance_by_id($instance->parentcontextid);
 $addpermission = has_capability('moodle/question:add', $categorycontext);
 
+$PAGE->requires->js_call_amd('block_h_infra_rsc/table_manager', 'init', array("permission" => $addpermission));
 
 $PAGE->set_heading($title);
 
