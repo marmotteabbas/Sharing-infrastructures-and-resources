@@ -230,15 +230,18 @@ define(['jquery'], function($) {
             });
 
             $(".remove_rec").click(function() {
-                var rec_id = $(this).attr("rec_id");
-                $.ajax({
-                    method: "POST",
-                    url: "ajax_call.php",
-                    data: { mode: "remove", rec_id: rec_id }
-                })
-                .done(function( msg ) {
-                    console.log("ok removed "+msg);
-                });
+                if(confirm("Are you sure?"))
+                {
+                    var rec_id = $(this).attr("rec_id");
+                    $.ajax({
+                        method: "POST",
+                        url: "ajax_call.php",
+                        data: { mode: "remove", rec_id: rec_id }
+                    })
+                    .done(function( msg ) {
+                        console.log("ok removed "+msg);
+                    });
+                }
             });
 
         },
