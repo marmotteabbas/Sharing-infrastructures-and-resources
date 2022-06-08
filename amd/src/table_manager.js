@@ -18,7 +18,7 @@ define(['jquery'], function($) {
                     "<td><a href='"+obj[rec]['researchinfrastructure']+"'.>"
                     +obj[rec]['researchinfrastructure'].substr(
                     obj[rec]['researchinfrastructure'].lastIndexOf("/")+1,
-                    obj[rec]['researchinfrastructure'].lastIndexOf(".jpg")-
+                    obj[rec]['researchinfrastructure'].lastIndexOf(".pdf")-
                     obj[rec]['researchinfrastructure'].lastIndexOf("/")-1)+
                     "</td>" +
                     "<td>"+obj[rec]['applicationthemes']+"</td>"+

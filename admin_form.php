@@ -28,7 +28,7 @@ class admin_form_h_infra_form extends moodleform {
         $mform =& $this->_form;
 
         $filemanager_options = array();
-        $filemanager_options['accepted_types'] = '*';
+        $filemanager_options['accepted_types'] = 'pdf';
         $filemanager_options['maxbytes'] = 0;
         $filemanager_options['maxfiles'] = -1;
         $filemanager_options['mainfile'] = true;

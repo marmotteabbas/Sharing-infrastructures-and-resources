@@ -306,7 +306,7 @@ echo $OUTPUT->header();
             $url = $rec->researchinfrastructure;
 
             $i_slash=strrpos($url, '/')+1;
-            $i_ext= strrpos($url, '.jpg')-$i_slash;
+            $i_ext= strrpos($url, '.pdf')-$i_slash;
    
             echo html_writer::start_tag('tr');
                 echo html_writer::start_tag('td'/*, array('colspan' => '2')*/);
