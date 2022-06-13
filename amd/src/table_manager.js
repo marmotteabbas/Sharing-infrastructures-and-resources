@@ -13,21 +13,20 @@ define(['jquery'], function($) {
                 var obj = JSON.parse(msg);
 
                 for (var rec in obj) {
-
-                    var content_tab = $("#table_data").html()+"<tr>"+
-                    "<td><a href='"+obj[rec]['researchinfrastructure']+"'.>"
+                    var content_tab = $("#table_data").html()+"<tr class='line_table'>"+
+                    "<td class='td_big'><a href='"+obj[rec]['researchinfrastructure']+"'.>"
                     +obj[rec]['researchinfrastructure'].substr(
                     obj[rec]['researchinfrastructure'].lastIndexOf("/")+1,
                     obj[rec]['researchinfrastructure'].lastIndexOf(".pdf")-
                     obj[rec]['researchinfrastructure'].lastIndexOf("/")-1)+
                     "</td>" +
-                    "<td>"+obj[rec]['applicationthemes']+"</td>"+
-                    "<td>"+obj[rec]['keywords']+"</td>"+
-                    "<td>"+obj[rec]['homepartnerinstitution']+"</td>";
+                    "<td class='td_big'>"+obj[rec]['applicationthemes']+"</td>"+
+                    "<td class='td_big'>"+obj[rec]['keywords']+"</td>"+
+                    "<td class='td_big'>"+obj[rec]['homepartnerinstitution']+"</td>";
 
                     if (perm) {
-                        content_tab = content_tab + '<td><span class="remove_rec" rec_id="'+obj[rec]['id']
-                        +'"><i class="icon fa fa-trash fa-fw " title="Supprimer" aria-label="Supprimer"></i></span></td>';
+                        content_tab = content_tab + '<td class="td_big"><span class="remove_rec" rec_id="'+obj[rec]['id']
+                        +'"><i class="suppr icon fa fa-trash fa-fw " title="Supprimer" aria-label="Supprimer"></i></span></td>';
                     }
 
                     $("#table_data").html(content_tab);

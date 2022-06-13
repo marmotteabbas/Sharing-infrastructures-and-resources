@@ -90,6 +90,36 @@ echo "
 .cellule_keyword {
     font-size: 0.8em;
 }
+
+.line_table:hover {
+    background-color:#e9ecef!important;
+}
+
+.tableFixHead {
+    overflow-x: hidden;
+    height: 646px !important;
+    overflow-y: auto;
+    height: 106px;
+  }
+  .tableFixHead .thead_big .th_big {
+    position: sticky;
+    top: 0;
+  }
+  .all_datas_infra_rsc {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .th_big,
+  .td_big {
+    padding: 8px 16px;
+   // border: 1px solid #ccc;
+  }
+  .th_big {
+    background: #eee;
+  }
+  .suppr {
+    cursor: pointer;
+  }
 </style>
 ";
 echo $OUTPUT->header();
@@ -279,21 +309,24 @@ echo $OUTPUT->header();
 
 
     // Big Table
+    echo html_writer::start_tag('div',array("class" => "tableFixHead"));
     echo html_writer::start_tag('table', array('class' => 'all_datas_infra_rsc', "style" => "margin-right:10px;width:100%;"));
 
-        echo html_writer::start_tag('thead');
+        echo html_writer::start_tag('thead',array("class"=>"thead_big"));
             echo html_writer::start_tag('tr');
-                echo html_writer::start_tag('th');
+                echo html_writer::start_tag('th',array("class"=>"th_big"));
                     echo "Research infrastructure (links to details)";
                 echo html_writer::end_tag('th');
-                echo html_writer::start_tag('th');
+                echo html_writer::start_tag('th',array("class"=>"th_big"));
                     echo "Application theme(s)";
                 echo html_writer::end_tag('th');
-                echo html_writer::start_tag('th');
+                echo html_writer::start_tag('th',array("class"=>"th_big"));
                     echo "Keywords";
                 echo html_writer::end_tag('th');
-                echo html_writer::start_tag('th');
+                echo html_writer::start_tag('th',array("class"=>"th_big"));
                     echo "Home partner institution";
+                echo html_writer::end_tag('th');
+                echo html_writer::start_tag('th',array("class"=>"th_big"));
                 echo html_writer::end_tag('th');
             echo html_writer::end_tag('tr');
         echo html_writer::end_tag('thead');
@@ -308,23 +341,23 @@ echo $OUTPUT->header();
             $i_slash=strrpos($url, '/')+1;
             $i_ext= strrpos($url, '.pdf')-$i_slash;
    
-            echo html_writer::start_tag('tr');
-                echo html_writer::start_tag('td'/*, array('colspan' => '2')*/);
+            echo html_writer::start_tag('tr', array("class" =>"line_table"));
+                echo html_writer::start_tag('td', array("class" =>"td_big"));
                     echo "<a href='".$url."'>".substr($url, $i_slash, $i_ext)."</a>"; //  echo "data 1";
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td');
+                echo html_writer::start_tag('td', array("class" =>"td_big"));
                     echo  $rec->applicationthemes;
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td');
+                echo html_writer::start_tag('td', array("class" =>"td_big"));
                     echo  str_replace("<>", " - ", $rec->keywords);
                 echo html_writer::end_tag('td');
-                echo html_writer::start_tag('td');
+                echo html_writer::start_tag('td', array("class" =>"td_big"));
                     echo  $rec->homepartnerinstitution;
                 echo html_writer::end_tag('td');
 
                 if ($addpermission) {
-                    echo html_writer::start_tag('td');
-                        echo '<span class="remove_rec" rec_id="'.$rec->id.'"><i class="icon fa fa-trash fa-fw " title="Supprimer" aria-label="Supprimer"></i></span>';
+                    echo html_writer::start_tag('td', array("class" =>"td_big"));
+                        echo '<span class="remove_rec" rec_id="'.$rec->id.'"><i class="suppr icon fa fa-trash fa-fw " title="Supprimer" aria-label="Supprimer"></i></span>';
                     echo html_writer::end_tag('td');
                 }
                 
@@ -334,5 +367,5 @@ echo $OUTPUT->header();
         echo html_writer::end_tag('tbody');
 
     echo html_writer::end_tag('table');
-
+    echo html_writer::end_tag('div');
 echo $OUTPUT->footer();
