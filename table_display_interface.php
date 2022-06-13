@@ -159,7 +159,7 @@ echo $OUTPUT->header();
                         echo "Biological";
                     echo html_writer::end_tag('td');
                     echo html_writer::start_tag('td', array("box"=>"Keywords", "class" => "cellule_keyword cellule_research"));
-                        echo "Helth, miscellaneous";
+                        echo "Helth, Miscellaneous";
                     echo html_writer::end_tag('td');
                     echo html_writer::start_tag('td', array("box"=>"Keywords", "class" => "cellule_keyword cellule_research"));
                         echo "Production 4.0";
