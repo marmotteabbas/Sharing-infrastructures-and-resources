@@ -43,7 +43,7 @@ class admin_form_h_infra_form extends moodleform {
         "Industry 4.0" => "Industry 4.0", 
         "IT, Electronics & Telecom" => "IT, Electronics & Telecom"), 
     /*$attributes*/ null);
-        $select->setMultiple(false);
+        $select->setMultiple(true);
 
         $select = $mform->addElement('select', 'keywords', 
         "Keywords", 

@@ -126,6 +126,39 @@ echo $OUTPUT->header();
 
    // echo html_writer::start_span() . '<h1>H2020</h1>' . html_writer::end_span();
 
+       //Research filter 1
+       echo html_writer::start_tag('div', array('id' => 'research_app_theme_filter'));
+       echo html_writer::start_span('thead_filter_research_app_theme_filter')."Research application themes filters". html_writer::end_span();
+           echo html_writer::start_tag('table', array("id" => "table_filter_research_app_theme_filter"));
+               echo html_writer::start_tag('tbody');
+                   echo html_writer::start_tag('tr');
+                           echo html_writer::start_tag('td', array("box"=>"applicationthemes", "class" => "cellule_research cellule_applicationthemes"));
+                               echo "Energy";
+                           echo html_writer::end_tag('td');
+                           echo html_writer::start_tag('td', array("box"=>"applicationthemes", "class" => "cellule_research cellule_applicationthemes"));
+                           echo "Environment";
+                           echo html_writer::end_tag('td');
+                   echo html_writer::end_tag('tr');
+                   echo html_writer::start_tag('tr');
+                           echo html_writer::start_tag('td', array("box"=>"applicationthemes", "class" => "cellule_research cellule_applicationthemes"));
+                               echo "Health Engineering";
+                           echo html_writer::end_tag('td');
+                           echo html_writer::start_tag('td', array("box"=>"applicationthemes", "class" => "cellule_research cellule_applicationthemes"));
+                           echo "Industry 4.0";
+                           echo html_writer::end_tag('td');
+                   echo html_writer::end_tag('tr');
+                   echo html_writer::start_tag('tr');
+                           echo html_writer::start_tag('td', array("box"=>"applicationthemes", "class" => "cellule_research cellule_applicationthemes"));
+                               echo "IT, Electronics & Telecom";
+                           echo html_writer::end_tag('td');
+                           echo html_writer::start_tag('td');
+                           //nada
+                           echo html_writer::end_tag('td');
+                   echo html_writer::end_tag('tr');
+               echo html_writer::end_tag('tbody');
+           echo html_writer::end_tag('table');
+       echo html_writer::end_tag('div');
+       
         //Keywords filter
         echo html_writer::start_tag('div', array('id' => 'research_keyword'));
         echo html_writer::start_div('thead_keyword_filter')."Keywords Filter". html_writer::end_div();
@@ -239,40 +272,6 @@ echo $OUTPUT->header();
                 echo html_writer::end_tag('tr');
             echo html_writer::end_tag('table');
         echo html_writer::end_tag('div');
-    
-    
-    //Research filter 1
-    echo html_writer::start_tag('div', array('id' => 'research_app_theme_filter'));
-    echo html_writer::start_span('thead_filter_research_app_theme_filter')."Research application themes filters". html_writer::end_span();
-        echo html_writer::start_tag('table', array("id" => "table_filter_research_app_theme_filter"));
-            echo html_writer::start_tag('tbody');
-                echo html_writer::start_tag('tr');
-                        echo html_writer::start_tag('td', array("box"=>"applicationthemes", "class" => "cellule_research cellule_applicationthemes"));
-                            echo "Energy";
-                        echo html_writer::end_tag('td');
-                        echo html_writer::start_tag('td', array("box"=>"applicationthemes", "class" => "cellule_research cellule_applicationthemes"));
-                        echo "Environment";
-                        echo html_writer::end_tag('td');
-                echo html_writer::end_tag('tr');
-                echo html_writer::start_tag('tr');
-                        echo html_writer::start_tag('td', array("box"=>"applicationthemes", "class" => "cellule_research cellule_applicationthemes"));
-                            echo "Health Engineering";
-                        echo html_writer::end_tag('td');
-                        echo html_writer::start_tag('td', array("box"=>"applicationthemes", "class" => "cellule_research cellule_applicationthemes"));
-                        echo "Industry 4.0";
-                        echo html_writer::end_tag('td');
-                echo html_writer::end_tag('tr');
-                echo html_writer::start_tag('tr');
-                        echo html_writer::start_tag('td', array("box"=>"applicationthemes", "class" => "cellule_research cellule_applicationthemes"));
-                            echo "IT, Electronics & Telecom";
-                        echo html_writer::end_tag('td');
-                        echo html_writer::start_tag('td');
-                        //nada
-                        echo html_writer::end_tag('td');
-                echo html_writer::end_tag('tr');
-            echo html_writer::end_tag('tbody');
-        echo html_writer::end_tag('table');
-    echo html_writer::end_tag('div');
 
         //Institution filter
         echo html_writer::start_tag('div', array('id' => 'research_institution_filter'));
@@ -301,6 +300,11 @@ echo $OUTPUT->header();
                             echo html_writer::end_tag('td');
                             echo html_writer::start_tag('td', array("box"=>"institution", "class" => "cellule_research cellule_homepartnerinstitution"));
                                 echo "Grenoble INP – UGA";
+                            echo html_writer::end_tag('td');
+                        echo html_writer::end_tag('tr');
+                        echo html_writer::start_tag('tr');
+                            echo html_writer::start_tag('td', array("box"=>"institution", "class" => "cellule_research cellule_homepartnerinstitution"));
+                                echo "PoliTO";
                             echo html_writer::end_tag('td');
                         echo html_writer::end_tag('tr');
                     echo html_writer::end_tag('tbody');
@@ -346,7 +350,7 @@ echo $OUTPUT->header();
                     echo "<a href='".$url."'>".substr($url, $i_slash, $i_ext)."</a>"; //  echo "data 1";
                 echo html_writer::end_tag('td');
                 echo html_writer::start_tag('td', array("class" =>"td_big"));
-                    echo  $rec->applicationthemes;
+                    echo  str_replace("<>", " - ", $rec->applicationthemes);
                 echo html_writer::end_tag('td');
                 echo html_writer::start_tag('td', array("class" =>"td_big"));
                     echo  str_replace("<>", " - ", $rec->keywords);

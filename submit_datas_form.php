@@ -34,6 +34,15 @@ if (count($files) == 1) {
     file_set_sortorder($context_id, 'block_h_infra_rsc', 'content', $last_id, $file->get_filepath(), $file->get_filename(), 1);
 }
 
+/* Convert Application Theme in String */
+$at = "";
+if(is_array($_POST['application_theme'])) {
+    foreach ($_POST['application_theme'] as $k) {
+        $at .= $k. "<>";
+    }
+}
+
+$at = substr($at, 0, -2);
 
 /* Convert keywords in String */
 $kws = "";
@@ -50,7 +59,7 @@ $kws = substr($kws, 0, -2);
 
 $ins = (object)array(
 'researchinfrastructure' => get_file_infra_url($last_id), 
-'applicationthemes' => $_POST['application_theme'],
+'applicationthemes' => $at,
 'keywords' => $kws,
 'homepartnerinstitution' => $_POST['homepartnerinstitution']
 );

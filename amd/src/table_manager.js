@@ -20,8 +20,8 @@ define(['jquery'], function($) {
                     obj[rec]['researchinfrastructure'].lastIndexOf(".pdf")-
                     obj[rec]['researchinfrastructure'].lastIndexOf("/")-1)+
                     "</td>" +
-                    "<td class='td_big'>"+obj[rec]['applicationthemes']+"</td>"+
-                    "<td class='td_big'>"+obj[rec]['keywords']+"</td>"+
+                    "<td class='td_big'>"+obj[rec]['applicationthemes'].replaceAll('<>', '-')+"</td>"+
+                    "<td class='td_big'>"+obj[rec]['keywords'].replaceAll('<>', '-')+"</td>"+
                     "<td class='td_big'>"+obj[rec]['homepartnerinstitution']+"</td>";
 
                     if (perm) {

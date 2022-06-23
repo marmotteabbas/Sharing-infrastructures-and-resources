@@ -21,7 +21,7 @@
             
         }
     
-        $where = substr($where, 0, -5);
+        $where = str_replace("&amp;","&",substr($where, 0, -5));
     
         $request = "SELECT * FROM {h_infra_src} ".$where;
         $rec_infra = $DB->get_records_sql($request, array());
