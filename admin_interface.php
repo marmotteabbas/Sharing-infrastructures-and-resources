@@ -21,7 +21,7 @@ if (isset($_GET['rec'])) {
 }
 $instance = $DB->get_record('block_instances', array('id' => $_GET['instance_id']));
 $categorycontext = context::instance_by_id($instance->parentcontextid);
-$addpermission = has_capability('moodle/question:add', $categorycontext);
+$addpermission = has_capability('block/h_infra_rsc:addinstance', $categorycontext);
 
 if ($addpermission == false) {
     throw new moodle_exception("Et bah non ! T'as pas le droit ! ", 'Access not allowed');

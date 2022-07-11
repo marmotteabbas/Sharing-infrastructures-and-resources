@@ -36,7 +36,7 @@ class block_h_infra_rsc extends block_base {
 
         $instance = $DB->get_record('block_instances', array('id' => $this->instance->id));
         $categorycontext = context::instance_by_id($instance->parentcontextid);
-        $addpermission = has_capability('moodle/question:add', $categorycontext);
+        $addpermission = has_capability('block/h_infra_rsc:addinstance', $categorycontext);
 
         if ($addpermission == false) {
             $this->title = "H2020";
