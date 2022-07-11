@@ -64,6 +64,10 @@ class block_h_infra_rsc extends block_base {
         return $this->content;
     }
 
+    function _self_test() {
+        return true;
+    }
+
 }
 
 

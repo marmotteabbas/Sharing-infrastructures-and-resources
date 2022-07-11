@@ -18,5 +18,5 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->version   = 2020110900;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2020110300;        // Requires this Moodle version
+$plugin->requires  = 2017110300;        // Requires this Moodle version
 $plugin->component = 'block_h_infra_rsc'; // Full name of the plugin (used for diagnostics)
