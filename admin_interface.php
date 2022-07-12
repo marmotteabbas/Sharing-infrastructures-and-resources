@@ -19,10 +19,25 @@ if (isset($_GET['rec'])) {
         $PAGE->requires->js_call_amd('block_h_infra_rsc/table_manager', 'progressive_disappear', array());
     }
 }
+/*
 $instance = $DB->get_record('block_instances', array('id' => $_GET['instance_id']));
 $categorycontext = context::instance_by_id($instance->parentcontextid);
 $addpermission = has_capability('block/h_infra_rsc:addinstance', $categorycontext);
+*/
 
+  //TODO : Erase duplication and put it an object 
+  $addpermission = false;
+
+  $sql = "SELECT * FROM {role_assignments} ra inner join {role} r ON ra.roleid = r.id WHERE ra.userid = ? AND ra.contextid = 1";
+  $role_for_user = $DB->get_records_sql($sql ,[$USER->id]);
+
+  foreach ($role_for_user as $rfu) {
+      if ($rfu->shortname == "h2020" || $rfu->shortname == "H2020") {
+          $addpermission = true;
+      }
+  }
+  /*------------------------------------------*/
+  
 if ($addpermission == false) {
     throw new moodle_exception("Et bah non ! T'as pas le droit ! ", 'Access not allowed');
 }

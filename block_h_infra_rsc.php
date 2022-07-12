@@ -34,10 +34,19 @@ class block_h_infra_rsc extends block_base {
     function get_content() {
         global $USER, $CFG, $COURSE, $DB;
 
-        $instance = $DB->get_record('block_instances', array('id' => $this->instance->id));
-        $categorycontext = context::instance_by_id($instance->parentcontextid);
-        $addpermission = has_capability('block/h_infra_rsc:addinstance', $categorycontext);
-        
+
+        //TODO : Erase duplication and put it an object 
+        $addpermission = false;
+
+        $sql = "SELECT * FROM {role_assignments} ra inner join {role} r ON ra.roleid = r.id WHERE ra.userid = ? AND ra.contextid = 1";
+        $role_for_user = $DB->get_records_sql($sql ,[$USER->id]);
+
+        foreach ($role_for_user as $rfu) {
+            if ($rfu->shortname == "h2020" || $rfu->shortname == "H2020") {
+                $addpermission = true;
+            }
+        }
+        /*------------------------------------------*/
         $this->title = "H2020";       
 
         $rows = array();
@@ -54,7 +63,7 @@ class block_h_infra_rsc extends block_base {
         if ($addpermission == true) {
             $this->content->text .= '<a href="'.$CFG->wwwroot.'/blocks/h_infra_rsc/admin_interface.php?instance_id='.$this->instance->id.'&id_context='.$this->context->id.'"><i class="h_infra_rsc_tool_icon icon fa fa-wrench"></i></a>';
         }
-        
+
         $this->content->text .= "<a href='".$CFG->wwwroot.'/blocks/h_infra_rsc/table_display_interface.php?id_context='.$this->context->id.'&instance_id='.$this->instance->id."'>Access the Sharing infrastructures and resources</a>";
  
         return $this->content;
