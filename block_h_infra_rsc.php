@@ -37,9 +37,9 @@ class block_h_infra_rsc extends block_base {
         $instance = $DB->get_record('block_instances', array('id' => $this->instance->id));
         $categorycontext = context::instance_by_id($instance->parentcontextid);
         $addpermission = has_capability('block/h_infra_rsc:addinstance', $categorycontext);
-
-        $this->title = "H2020";
         
+        $this->title = "H2020";       
+
         $rows = array();
         $srows = array();
         $prows = array();
@@ -52,14 +52,11 @@ class block_h_infra_rsc extends block_base {
         $this->content->footer = '';
 
         if ($addpermission == true) {
-            $this->content->text .='<a href="'.$CFG->wwwroot.'/blocks/h_infra_rsc/admin_interface.php?instance_id='.$this->instance->id.'&id_context='.$this->context->id.'"><i class="h_infra_rsc_tool_icon icon fa fa-wrench" style="
-            position: absolute;
-            top: 19px;
-            left: 72px;"></i></a>';
+            $this->content->text .= '<a href="'.$CFG->wwwroot.'/blocks/h_infra_rsc/admin_interface.php?instance_id='.$this->instance->id.'&id_context='.$this->context->id.'"><i class="h_infra_rsc_tool_icon icon fa fa-wrench"></i></a>';
         }
-
-        $this->content->text .= "<a href='".$CFG->wwwroot.'/blocks/h_infra_rsc/table_display_interface.php?id_context='.$this->context->id.'&instance_id='.$this->instance->id."'>Access the Sharing infrastructures and resources</a>";
         
+        $this->content->text .= "<a href='".$CFG->wwwroot.'/blocks/h_infra_rsc/table_display_interface.php?id_context='.$this->context->id.'&instance_id='.$this->instance->id."'>Access the Sharing infrastructures and resources</a>";
+ 
         return $this->content;
     }
 
