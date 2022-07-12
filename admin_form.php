@@ -90,7 +90,7 @@ class admin_form_h_infra_form extends moodleform {
     /*$attributes*/ null);
         $select->setMultiple(false);
 
-        $this->add_action_buttons(true, "Sauvez moi ça");
+        $this->add_action_buttons(true, "Save");
     }
 
     function set_id_context_field($i, $y){
