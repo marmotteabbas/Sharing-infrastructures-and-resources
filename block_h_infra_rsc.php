@@ -29,6 +29,7 @@ echo "
 class block_h_infra_rsc extends block_base {
     function init() {
         global $USER, $CFG;
+        $this->title = get_string('pluginname','block_h_infra_rsc');
     }
 
     function get_content() {
