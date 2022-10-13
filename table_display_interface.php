@@ -16,7 +16,7 @@
 
 
 require_once(__DIR__.'/../../config.php');
-global $DB;
+global $DB, $USER;
 echo "<link href='style/style.css' rel='stylesheet' type='text/css' />";
 
 $title = "Sharing infrastructures and resources";
