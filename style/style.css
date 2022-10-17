@@ -1,3 +1,7 @@
 th, td { 
     padding-right: 30px; 
 } 
+
+#id_application_theme, #id_keywords {
+    resize: vertical;
+  }
