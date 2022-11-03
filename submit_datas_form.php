@@ -53,6 +53,10 @@ if(is_array($_POST['keywords'])) {
     }
 }
 
+if(!empty($_POST["aditionnalkeywords"])) {
+        $kws .= $_POST["aditionnalkeywords"]. "<>";
+}
+
 $kws = substr($kws, 0, -2);
 
 /* Insert in table */

@@ -5,3 +5,16 @@ th, td {
 #id_application_theme, #id_keywords {
     resize: vertical;
   }
+
+  #addikeywords {
+    color:blue;
+    cursor: pointer;
+  }
+
+  #addikeywords:hover {
+    font-weight: bold;
+  }
+
+  #fitem_id_aditionnalkeywords {
+    display: none;
+  }

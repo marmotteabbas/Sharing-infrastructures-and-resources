@@ -25,6 +25,9 @@ class admin_form_h_infra_form extends moodleform {
     function definition() {
 
         global $CFG, $DB, $PAGE;
+
+        $PAGE->requires->js_call_amd('block_h_infra_rsc/admin_interface_manager', 'init', array());
+
         $mform =& $this->_form;
 
         $filemanager_options = array();
@@ -72,10 +75,16 @@ class admin_form_h_infra_form extends moodleform {
         "Mechanical Engineering" => "Mechanical Engineering",
         "High Performance Computing" => "High Performance Computing",
         "Observation and/or modelling of nature" => "Observation and/or modelling of nature",
-        "Micro-/-nano-" => "Micro-/-nano-",
+        "Mico- / Nano-" => "Mico- / Nano-",
         "Telecommunications" => "Telecommunications"), 
     /*$attributes*/ null);
         $select->setMultiple(true);
+
+        $mform->addElement('html',"<div class='form-group row  fitem'>
+                                        <div class='col-md-3 col-form-label d-flex pb-0 pr-md-0'></div>
+                                        <div id='addikeywords'class='col-md-9 form-inline align-items-start felement'>Hide/Show Aditionnal Keywords</div>
+                                  </div>");
+        $mform->addElement('text', 'aditionnalkeywords', 'Aditionnal Keywords');
 
         $select = $mform->addElement('select', 'homepartnerinstitution', 
         "Home Partner Institution", 
