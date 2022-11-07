@@ -14,7 +14,7 @@ define(['jquery'], function($) {
 
                 for (var rec in obj) {
                     var content_tab = $("#table_data").html()+"<tr class='line_table'>"+
-                    "<td class='td_big'><a href='"+obj[rec]['researchinfrastructure']+"'.>"
+                    "<td class='td_big'><a target='_blank' href='"+obj[rec]['researchinfrastructure']+"'.>"
                     +obj[rec]['researchinfrastructure'].substr(
                     obj[rec]['researchinfrastructure'].lastIndexOf("/")+1,
                     obj[rec]['researchinfrastructure'].lastIndexOf(".pdf")-

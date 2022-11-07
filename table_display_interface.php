@@ -276,7 +276,7 @@ echo $OUTPUT->header();
                         echo "Observation and/or Modelling of Nature";
                     echo html_writer::end_tag('td');
                     echo html_writer::start_tag('td', array("box"=>"Keywords", "class" => "cellule_keyword cellule_research"));
-                        echo "Micro-/-nano-";
+                        echo "Mico- / Nano-";
                     echo html_writer::end_tag('td');
                     echo html_writer::start_tag('td', array("box"=>"Keywords", "class" => "cellule_keyword cellule_research"));
                         echo "Telecommunications";
@@ -359,7 +359,7 @@ echo $OUTPUT->header();
    
             echo html_writer::start_tag('tr', array("class" =>"line_table"));
                 echo html_writer::start_tag('td', array("class" =>"td_big"));
-                    echo "<a href='".$url."'>".substr($url, $i_slash, $i_ext)."</a>"; //  echo "data 1";
+                    echo "<a href='".$url."' target='_blank'>".substr($url, $i_slash, $i_ext)."</a>"; //  echo "data 1";
                 echo html_writer::end_tag('td');
                 echo html_writer::start_tag('td', array("class" =>"td_big"));
                     echo  str_replace("<>", " - ", $rec->applicationthemes);
