@@ -140,7 +140,7 @@ echo $OUTPUT->header();
 
        //Research filter 1
        echo html_writer::start_tag('div', array('id' => 'research_app_theme_filter'));
-       echo html_writer::start_span('thead_filter_research_app_theme_filter')."Research application themes filters". html_writer::end_span();
+       echo html_writer::start_span('thead_filter_research_app_theme_filter')."Research application themes". html_writer::end_span();
            echo html_writer::start_tag('table', array("id" => "table_filter_research_app_theme_filter"));
                echo html_writer::start_tag('tbody');
                    echo html_writer::start_tag('tr');
@@ -173,7 +173,7 @@ echo $OUTPUT->header();
        
         //Keywords filter
         echo html_writer::start_tag('div', array('id' => 'research_keyword'));
-        echo html_writer::start_div('thead_keyword_filter')."Keywords Filter". html_writer::end_div();
+        echo html_writer::start_div('thead_keyword_filter')."Keywords". html_writer::end_div();
             echo html_writer::start_tag('table', array("id" => "table_keyword"));
                 echo html_writer::start_tag('tr');
                     echo html_writer::start_tag('td', array("box"=>"Keywords", "class" => "cellule_keyword cellule_research"));
