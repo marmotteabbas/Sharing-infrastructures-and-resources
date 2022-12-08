@@ -17,6 +17,11 @@
 
 require_once(__DIR__.'/../../config.php');
 global $DB, $USER;
+
+if (!isloggedin()) {
+    throw new Error("You are not logged to the platform. Please log in to consult this panel."); 
+}
+
 echo "<link href='style/style.css' rel='stylesheet' type='text/css' />";
 
 $title = "Sharing infrastructures and resources";
